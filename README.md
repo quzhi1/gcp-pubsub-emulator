@@ -4,7 +4,7 @@
 - `docker build . -t gcppubsub:latest`
 
 ### Run:
-- `docker run -p 8085:8085 gcp-pubsub-dev:latest`
+- `docker run -p 8085:8085 gcppubsub:latest`
 
 ### Test connection with curl:
 - test with curl: `http://localhost:8085` or `0.0.0.0:8085`
