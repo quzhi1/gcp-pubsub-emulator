@@ -22,5 +22,7 @@
 - More: https://cloud.google.com/pubsub/docs/reference/rest
 - Curl samples: https://github.com/robertsicoie/gcp-pubsub-samples
 
+### Clean up build stage image:
+- `docker image prune --filter label=stage=builder`
 ### TODO:
 - Do we need configurable hosts/ports?
