@@ -14,10 +14,21 @@
 - Projects are created "on the fly" when creating topics
 - Create a topic: `PUT http://localhost:8085/v1/projects/test/topics/cats` where `cats` is a new topic name and `test` is the project
 - Get project topics `GET http://localhost:8085/v1/projects/test/topics`
+- Subscribe to topic: `PUT http://localhost:8085/v1/projects/test/subscriptions/test-sub` where `test-sub` is the subscription name
+   - Payload:
+        ```
+        {"topic": "projects/test/topics/cats"}
+        ```
+
 - Publish message to topic: `POST http://localhost:8085/v1/projects/test/topics/cats:publish`
--   - Payload:
+    - Payload:
         ```
         ​{"messages": [{"data": "cats rule"}]}
+        ````
+- Pull messages from topic: `POST localhost:8085/v1/projects/test/subscriptions/test-sub:pull`
+    - Payload:
+        ```
+        ​{"max_messages": 1}
         ````
 - More: https://cloud.google.com/pubsub/docs/reference/rest
 - Curl samples: https://github.com/robertsicoie/gcp-pubsub-samples
