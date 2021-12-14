@@ -35,5 +35,11 @@
 
 ### Clean up build stage image:
 - `docker image prune --filter label=stage=builder`
+
+### Build multi-arch images
+```bash
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t quzhi65222714/gcp-pubsub-emulator:latest --push .
+```
+
 ### TODO:
 - Do we need configurable hosts/ports?
